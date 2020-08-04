@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+    </style>
+</head>
+<body>
+    <button id="open">打开</button>
+    <button id="close">关闭</button>
+    <script>
+    /*window对象两个常用方法
+        open():打开新窗口
+        close():关闭窗口 
+     */
+
+   
+     document.getElementById('open').onclick = function(){
+         /** 打开新窗口
+         URL：网址
+         name:相当于a标签的target，默认是_blank
+         features: 设置新打开窗口的位置和大小  ，字符串
+         replace：是否添加到历史记录   true - URL 替换浏览历史中的当前条目。 
+                                    false - URL 在浏览历史中创建新的条目。
+         */
+         window.open('http://www.baidu.com','_blank','left=100px,top=100px,width=300px,height=300px')//open()完全等价，可以省略window
+     };
+
+     document.getElementById('close').onclick = function(){
+         window.close()//close()完全等价，可以省略window
+     };
+    </script>
+</body>
+</html>

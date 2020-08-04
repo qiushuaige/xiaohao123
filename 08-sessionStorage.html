@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn1">存储据</button>
+    <button id="btn2">取储据</button>
+    <button id="btn3">删储据</button>
+    <button id="btn4">清空储据</button>
+
+    <script>
+        /* 
+            1.sessionStorage相当于短命版的localStorage，其他用法完全一致
+
+            2.两者区别：HP值不同
+                localStorage：永久存储（存在硬盘，HP值无限）
+                sessionStorage：临时存储（存在内存，HP值一条命，只要浏览器关闭就没有了）
+
+         */
+
+
+        //存
+        document.getElementById('btn1').onclick = function(){
+            sessionStorage.setItem('name','班长');
+            sessionStorage.setItem('age',18);
+            sessionStorage.setItem('girlFriend',['苍老师','波多老师','吉泽老师']);
+        }
+
+        //取
+        document.getElementById('btn2').onclick = function(){
+            var age = sessionStorage.getItem('age');
+            console.log(age); 
+        }
+
+        //删
+        document.getElementById('btn3').onclick = function(){
+            sessionStorage.removeItem('girlFriend'); 
+        }
+
+        //清空:一次性删除所有数据
+        document.getElementById('btn4').onclick = function(){
+            sessionStorage.clear(); 
+        }
+    </script>
+</body>
+</html>

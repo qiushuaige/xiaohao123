@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn1">存储据</button>
+    <button id="btn2">取储据</button>
+    <button id="btn3">删储据</button>
+    <button id="btn4">清空储据</button>
+
+    <script>
+        /* 
+            1.localStorage:本地存储
+                将数据存储到浏览器
+
+            2.语法
+                存：  localStorage.setItem('属性名','属性值')
+                取：  localStorage.getItem('属性名')
+                删：  localStorage.removeItem('属性名')
+                清空： localStorage.clear()
+
+            3.注意点
+                a.存储的数据只能是字符串类型。如果是其他数据类型则会自动调用toString()方法转成字符串
+                b.永久存储。除非自己删，否则一直存在于浏览器
+         */
+
+
+        //存
+        document.getElementById('btn1').onclick = function(){
+            localStorage.setItem('name','班长');
+            localStorage.setItem('age',18);
+            localStorage.setItem('girlFriend',['苍老师','波多老师','吉泽老师']);
+        }
+
+        //取
+        document.getElementById('btn2').onclick = function(){
+            var age = localStorage.getItem('age');
+            console.log(age); 
+        }
+
+        //删
+        document.getElementById('btn3').onclick = function(){
+            localStorage.removeItem('girlFriend'); 
+        }
+
+        //清空:一次性删除所有数据
+        document.getElementById('btn4').onclick = function(){
+            localStorage.clear(); 
+        }
+    </script>
+</body>
+</html>

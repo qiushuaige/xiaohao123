@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*window对象：浏览器窗口对象 
+            1.是js中的顶级对象(js中所有的全局变量，全局函数，dom)都是window对象的属性
+            2.只要是window对象的属性，在使用的时候可以省略前面的window
+            3.window对象有一个特殊的属性name，它的值一定是字符串类型
+         */
+
+        //1.js顶级对象
+        console.log(window);
+
+        var a = 10;//全局变量本质是给window对象添加属性
+        console.log(a);//window.a
+        //2.只要是window对象的属性，在使用的时候可以省略前面的window
+        console.log(window.a === a);
+        console.log(window.document === document);
+        console.log(window.console === console);
+
+        //  alert('111');
+        //3.window对象有一个特殊的属性name，它的值一定是字符串类型
+        name = [10, 20, 30];
+        console.log(name);
+
+        var name = [100, 200, 300];
+        console.log(name);
+
+        top = 10;//top全局变量值无法修改，一定是window自身
+        console.log(top);
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

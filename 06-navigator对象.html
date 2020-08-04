@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*navigator对象：浏览器信息 （浏览器名字  浏览器版本号 操作系统 位数32/64）
+            作用：用户数据统计  (大数据杀熟)
+        
+         */
+
+         console.log(navigator);//window.navigator
+
+         console.log(navigator.userAgent);//完整浏览器信息
+
+         //写一个函数获取用户的浏览器
+         //思路：只要userAgent中包含Chrome就说明是谷歌
+         if(navigator.userAgent.indexOf('Chrome') != -1){
+             alert('谷歌浏览器')
+         }else if(navigator.userAgent.indexOf('Firefox') != -1){//存在Firefox字符串
+            alert('火狐浏览器')
+         }else{
+             alert('IE等垃圾浏览器');
+         };
+
+         /* 
+         window:窗口
+         location：地址栏
+         history：历史记录
+         navigator：；浏览器信息
+         screen：用户电脑屏幕分辨率（跟浏览器没关系）
+          */
+          console.log(screen);
+          
+         
+         
+    </script>
+</body>
+</html>

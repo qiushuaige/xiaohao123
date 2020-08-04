@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" id="assign" value="assign打开新网页">
+    <br>
+    <input type="button" id="replace" value="replace替换当前网页">
+    <br>
+    <input type="button" id="reload" value="reload刷新当前网页">
+    <br>
+    <script>
+
+        /* url:全球统一资源定位符
+        http://127.0.0.1:443/s?id=1&username=123456#
+
+        protrol:协议名     http  https 
+        host 主机  = hostname  (主机名ip)   +    port(端口号)
+        pathname:路径
+        search:参数
+        hash #： 资源定位符 锚点定位   让你的页面一加载就停留到指定id的盒子位置
+        
+         */
+        console.log(window.location);
+        console.log(location);
+
+        console.log(location.href);//完整路径
+        console.log(location.host);//主机  hostname+port
+        console.log(location.search);//参数
+
+
+       // location.href = 'http://www.baidu.com';//js代码动态修改浏览器地址栏
+
+
+        /*location对象三个方法
+        assign:打开新网页 
+        replace:替换新网页 
+        reload:刷新网页 
+        
+         */
+
+        //注册事件
+        document.getElementById('assign').onclick = function () {
+            location.assign('http://www.itcast.com');//可以返回
+        }
+
+        document.getElementById('replace').onclick = function () {
+            location.replace('http://www.itcast.com')//不能返回
+        }
+
+        document.getElementById('reload').onclick = function () {
+            location.reload();//相当于F5
+        }
+
+    </script>
+</body>
+
+</html>

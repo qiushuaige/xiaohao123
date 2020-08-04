@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="请输入账号" id="user">
+    <input type="password" placeholder="请输入密码" id="pwd">
+    <a href="09-页面间传值2.html" id="next">下一步</a>
+
+    <script>
+
+        var user = document.getElementById('user');
+        var pwd = document.getElementById('pwd');
+
+        document.getElementById('next').onclick = function(){
+            //希望跳转之前保存一下数据
+            sessionStorage.setItem('user',user.value);
+            sessionStorage.setItem('pwd',pwd.value);
+        }
+    </script>
+</body>
+</html>

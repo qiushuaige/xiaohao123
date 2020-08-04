@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="">
+    <script src=""></script>
+
+
+    <script>
+        //如果script标签写在body前面，例如head中，默认是无法获取dom元素
+        //原因：浏览器从网上下解析代码，当解析到js代码的时候，body还未加载
+        var box = document.getElementById('box');
+        console.log(box);//null
+        
+
+        /*window对象三个事件：浏览器窗口从打开到关闭三个特殊时刻
+            onload:网页一切内容(所有外部资源路径，外接css/js文件，img图片)后执行
+    
+         */
+
+        //1.页面加载完毕:
+        window.onload = function () {
+            console.log('页面加载完毕');
+            //作用：可以在任何位置获取页面元素
+            var box = document.getElementById('box');
+            console.log(box);//
+
+        }
+        //2.页面关闭之前
+        window.onbeforeunload = function () {
+            //常用作用：保存一些重要数据
+            console.log('我即将要被关闭了');
+            //另一个作用：挽留用户  （谷歌火狐会拦截）
+            // return '大爷，你确定不加个钟再走吗?';
+            /*IE8病毒思路：用户点击关闭，人为写一个死循环无限打开新页面 
+             */
+            //  while(true){
+            //      window.open();//不传url默认当前页面打开
+            //  };
+        };
+
+        //3.页面正在关闭：这个事件走完的一瞬间页面就关闭了
+        window.onunload = function () {
+            //了解即可：这个事件不能存储数据
+            console.log('我正在关闭');
+        };
+
+    </script>
+</head>
+
+<body>
+    <div id="box">我是班长</div>
+    <img src="" alt="">
+
+</body>
+
+</html>

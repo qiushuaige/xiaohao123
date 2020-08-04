@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" placeholder="请输入职业" id="job">
+    <input type="text" placeholder="请输入邮箱" id="email">
+    <input type="text" placeholder="请输入地址" id="addr">
+
+    <input type="button" value="注册" id="register">
+
+    <script>
+
+        var job = document.getElementById('job');
+        var email = document.getElementById('email');
+        var addr = document.getElementById('addr');
+
+        document.getElementById('register').onclick = function () {
+
+            //拿到上一个页面的内容
+            var user = sessionStorage.getItem('user');
+            var pwd = sessionStorage.getItem('pwd');
+            //拿到当前页面的内容
+
+            //一起发给服务器
+            console.log(user, pwd, job.value, email.value, addr.value);
+
+        }
+    </script>
+</body>
+
+</html>
